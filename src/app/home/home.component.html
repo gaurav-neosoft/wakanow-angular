@@ -1,0 +1,26 @@
+
+  <div class="table-container">
+    <h2>Details of users</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.fullName }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.password }}</td>
+          <td>
+            <button (click)="updateUser(user)">Edit</button>
+            <button *ngIf="!user.isApproved" (click)="approveUser(user)">Approve</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
